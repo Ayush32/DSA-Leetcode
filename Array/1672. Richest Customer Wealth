@@ -1,0 +1,23 @@
+You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the is the customer has in the j the bank. 
+Return the wealth that the richest customer has.
+Input: accounts = [[1,2,3],[3,2,1]]
+Output: 6
+
+// c++ solution
+
+class Solution {
+public:
+    int maximumWealth(vector<vector<int>>& accounts) {
+        int r = accounts.size();
+        int c = accounts[0].size();
+        int maximum = INT_MIN;
+        for(int i = 0;i<r;i++){
+            int sum = 0;
+            for(int j = 0;j<c;j++){
+                sum+=accounts[i][j];
+            }
+            maximum = max(maximum,sum);
+        }
+        return maximum;
+    }
+};
