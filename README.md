@@ -1,2 +1,2 @@
 # DSA-Leetcode
-Leetcode Question of All Topics
+This Rep Contains all question of Leetcode.
