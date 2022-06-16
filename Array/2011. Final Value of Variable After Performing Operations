@@ -1,0 +1,23 @@
+Given an array of strings operations containing a list of operations, return the final value of X after performing all the operations.
+Input: operations = ["--X","X++","X++"]
+Output: 1
+
+class Solution {
+public:
+    int finalValueAfterOperations(vector<string>& operations) {
+        int X = 0;
+        for(int i = 0 ;i<operations.size();i++)
+        {
+            if(operations[i] == "--X" or operations[i] == "X--")
+            {
+                X = X - 1; 
+            }
+            
+            if(operations[i] == "++X" or operations[i] == "X++")
+            {
+                X = X + 1; 
+            }
+        }
+        return X;
+    }
+};
