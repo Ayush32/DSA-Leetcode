@@ -1,2 +1,2 @@
 # DSA-Leetcode
-This Rep Contains all question of Leetcode.
+This Repo Contains all question of Leetcode.
