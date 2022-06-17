@@ -1,0 +1,15 @@
+We are given a list nums of integers representing a list compressed with run-length encoding.
+Input: nums = [1,2,3,4]
+Output: [2,4,4,4]
+
+class Solution {
+public:
+    vector<int> decompressRLElist(vector<int>& nums) {
+        vector<int>res;
+        for(int i  = 0;i<nums.size();i+=2)
+        {
+            res.insert(res.end(),nums[i],nums[i+1]);
+        }
+        return res;
+    }
+};
