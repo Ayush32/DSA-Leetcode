@@ -1,0 +1,25 @@
+Return a boolean array result of length n, where result[i] is true if, after giving the ith kid all the extraCandies,
+they will have the greatest number of candies among all the kids, or false otherwise.
+Input: candies = [2,3,5,1,3], extraCandies = 3
+Output: [true,true,true,false,true] 
+
+// C++ Solution
+
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int maximum = *max_element(candies.begin(),candies.end());
+        vector<bool>ans;
+        for(int i = 0;i<candies.size();i++){
+            int sum = candies[i] + extraCandies;
+            
+            if(sum >= maximum){
+                ans.push_back(true);
+            }
+            else{
+                ans.push_back(false);
+            }
+        }
+        return ans;
+    }
+};
