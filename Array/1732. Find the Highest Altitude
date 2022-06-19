@@ -1,0 +1,19 @@
+You are given an integer array gain of length n where gain[i] is the net gain in altitude between points i 
+and i + 1 for all (0 <= i < n). Return the highest altitude of a point.
+Input: gain = [-5,1,5,0,-7]
+Output: 1
+
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) {
+        vector<int>v;
+        v.push_back(0);
+        
+        for(int i = 0;i<gain.size();i++){
+            int sum = gain[i] + v[i];
+            v.push_back(sum);
+        }
+        return *max_element(v.begin(),v.end());
+    }
+};
+
