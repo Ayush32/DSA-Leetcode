@@ -1,0 +1,28 @@
+Given an n x n binary matrix image, flip the image horizontally, then invert it, and return the resulting image.
+To flip an image horizontally means that each row of the image is reversed.
+Input: image = [[1,1,0],[1,0,1],[0,0,0]]
+Output: [[1,0,0],[0,1,0],[1,1,1]]
+
+
+ class Solution {
+public:
+    vector<vector<int>> flipAndInvertImage(vector<vector<int>>& image) {
+        int m = image.size();
+        int n = image[0].size();
+        for(int i=0;i<image.size();i++)
+            {
+                    reverse(image[i].begin(),image[i].end());
+            }
+        for(int i = 0;i<m;i++)
+        {
+            for(int j = 0;j<n;j++){
+                if(image[i][j] == 1)
+                    image[i][j] = 0;
+                else
+                    image[i][j] = 1;
+            }
+            
+        }
+        return image;
+    }
+};
