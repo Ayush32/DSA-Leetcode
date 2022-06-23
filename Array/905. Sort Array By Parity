@@ -1,0 +1,29 @@
+Given an integer array nums, move all the even integers at the beginning of the array followed by all the odd integers.
+Input: nums = [3,1,2,4]
+Output: [2,4,3,1]
+
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        int l =0;
+        int r = nums.size()-1;
+        
+        while(l < r){
+            if(nums[l] % 2 == 0){
+                l++;
+                continue;
+            }
+            if(nums[r] % 2 != 0){
+                r--;
+                continue;
+            }
+            if(nums[r] % 2 == 0 && nums[l] % 2 != 0){
+                swap(nums[l],nums[r]);
+                l++;
+                r--;
+            }
+            
+        }
+        return nums;
+    }
+};
