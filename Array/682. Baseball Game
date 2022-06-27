@@ -1,0 +1,36 @@
+You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds' scores.
+Return the sum of all the scores on the record. The test cases are generated so that the answer fits in a 32-bit integer.
+
+Input: ops = ["5","2","C","D","+"]
+Output: 30
+
+class Solution {
+public:
+    int calPoints(vector<string>& ops) {
+        vector<int>v;
+        for(int i = 0;i<ops.size();i++){
+           
+            if(ops[i] == "D"){
+               
+               v.push_back(v[v.size()-1]*2);
+           }
+       else if(ops[i] == "C"){
+                v.pop_back();
+            }
+                            
+    else if(ops[i] == "+")  {
+                
+                v.push_back(v[v.size()-1] + v[v.size() - 2]);
+            }   
+    else
+            {
+                v.push_back(stoi(ops[i]));
+            }
+            }
+            int sum = 0;
+            for(int i = 0;i<v.size();i++){
+                sum += v[i];
+            }
+          return sum;
+    }
+};
